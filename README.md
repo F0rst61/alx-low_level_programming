@@ -1,55 +1,63 @@
-# PRINTF
+# printf
+```printf``` is a custom implementation of the C programming function ```printf```. This project is an application of the C programming knowledge.
 
-> ##  Projects Build by Rohisha  and Huckiel
+**Prototype:** ```int _printf(const char *, ...);```
 
+## Examples
+**String**
+* Input: ```_printf("%s\n", 'This is a string.');```
+* Output: ```This is a string.```
 
-We build to printf function receive user input and prints to the standard output
+**Character**
+* Input: ```_printf("The first letter in the alphabet is %c\n", 'A');```
+* Output: ```The first letter in the alphabet is A```
 
+**Integer**
+* Input: ```_printf("There are %i dozens in a gross\n", 12);```
+* Output: ```There are 12 dozens in a gross```
 
-FORMAT outputs a specified format relative to the specifier input.
+**Decimal:**
+* Input: ```_printf("%d\n", 1000);```
+* Output:  ```1000```
+## Project Requirements
+* All files will be compiled on Ubuntu 14.04 LTS
+* Programs and functions will be compiled with gcc 4.8.4 using flags -Wall -Werror -Wextra and -pedantic compiler
+* Code must follow the [Betty](https://github.com/holbertonschool/Betty/wiki) style
+* Global variables are not allowed
+* Authorized functions and macros:
+  * ```write``` (man 2 write)
+  * ```malloc``` (man 3 malloc)
+  * ```free``` (man 3 free)
+  * ```va_start``` (man 3 va_start)
+  * ```va_end``` (man 3 va_end)
+  * ```va_copy``` (man 3 va_copy)
+  * ```va_arg``` (man 3 va_arg)
+## Mandatory Tasks
+- [x] Write function that produces output with conversion specifiers ```c```, ```s```, and ```%```.
+- [x] Handle conversion specifiers. ```d```, ```i```.
+- [x] Create a man page for your function.
+## Advanced Tasks
+- [x] Handle conversion specifier ```b```.
+- [x] Handle conversion specifiers ```u```, ```o```, ```x```, ```X```.
+[x] Use a local buffer of 1024 chars in order to call write as little as possible.
+- [x] Handle conversion specifier ```S```.
+- [x] Handle conversion specifier ```p```.
+- [ ] Handle flag characters ```+```, space, and ```#``` for non-custom conversion specifiers.
+- [ ] Handle length modifiers ```l``` and ```h``` for non-custom conversion specifiers.
+- [ ] Handle the field width for non-custom conversion specifiers.
+- [ ] Handle the precision for non-custom conversion specifiers.
+- [ ] Handle the ```0``` flag character for non-custom conversion specifiers.![163788643-5275226b-c1e7-4326-b96e-12092bb09f54](https://user-images.githubusercontent.com/94393557/164071978-cb18dbd8-cd6b-41a1-9a28-0494fa3cd199.png)
 
-<img src="https://i.ytimg.com/vi/mZFdyoZhUb4/maxresdefault.jpg" alt="Printf" width="500" height="400">
-
-![Printf](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Printf.svg/700px-Printf.svg.png)
-
-
-
-| `specifier`|	`Output` |	`Example` |
-| --------- | --------- | --------- |
-| d or i|	Signed decimal integer|	392 |
-|u	|Unsigned decimal integer|	7235|
-|o	|Unsigned octal|	610|
-|x	|Unsigned hexadecimal integer|	7fa|
-|X	|Unsigned hexadecimal integer (uppercase)|	7FA|
-|f	|Decimal floating point, lowercase|	392.65|
-|F	|Decimal floating point, uppercase|	392.65|
-|e	|Scientific notation (mantissa/exponent), lowercase|	3.9265e+2|
-|E	|Scientific notation (mantissa/exponent), uppercase|	3.9265E+2|
-|g	|Use the shortest representation: %e or %f|	392.65|
-|G	|Use the shortest representation: %E or %F|	392.65|
-|a	|Hexadecimal floating point, lowercase|	-0xc.90fep-2|
-|A	|Hexadecimal floating point, uppercase|	-0XC.90FEP-2|
-|c	|Character|	a|
-|s	|String of characters|	sample|
-|p	|Pointer address|	b8000000|
-|%	|A % followed by another % character will write a single % to the stream.|	%|
-
-The format specifier can also contain sub-specifiers: flags, width, .precision and modifiers (in that order), which are optional and follow these specifications:
-
-| `flags`|	`description`|
-| -------- | ------------ |
-| -	|Left-justify within the given field width; Right justification is the default (see width sub-specifier).|
-| +	| Forces to preceed the result with a plus or minus sign (+ or -) even for positive numbers. By default, only negative numbers are preceded with a - sign.|
-| (space)|	If no sign is going to be written, a blank space is inserted before the value.|
-| #	|Used with o, x or X specifiers the value is preceeded with 0, 0x or 0X respectively for values different than zero. Used with a, A, e, E, f, F, g or G it forces the written output to contain a decimal point even if no more digits follow. By default, if no digits follow, no decimal point is written.|
-|0	|Left-pads the number with zeroes (0) instead of spaces when padding is specified (see width sub-specifier).|
-
-| `width` |	`description`|
-| --------- | -------- |
-| (number) |	Minimum number of characters to be printed. If the value to be printed is shorter than this number, the result is padded with blank spaces. The value is not truncated even if the result is larger.|
-| *	|The width is not specified in the format string, but as an additional integer value argument preceding the argument that has to be formatted.|
-
-| `.precision` | 	`description`|
-| ------------ | ------------ |
-| .number	| For integer specifiers (d, i, o, u, x, X): precision specifies the minimum number of digits to be written. If the value to be written is shorter than this number, the result is padded with leading zeros. The value is not truncated even if the result is longer. A precision of 0 means that no character is written for the value 0. For a, A, e, E, f and F specifiers: this is the number of digits to be printed after the decimal point (by default, this is 6). For g and G specifiers: This is the maximum number of significant digits to be printed. For s: this is the maximum number of characters to be printed. By default all characters are printed until the ending null character is encountered. If the period is specified without an explicit value for precision, 0 is assumed.|
-| .*	|The precision is not specified in the format string, but as an additional integer value argument preceding the argument that has to be formatted.|
+- [x] Handle the custom conversion specifier ```r``` that prints the reversed string.
+- [x] Handle the custom conversion specifier ```R``` that prints the rot13'ed string.
+- [ ] All above options should work well together.
+## File Descriptions
+* **_printf.c:** - contains the  fucntion ```_printf```, which uses the prototype ```int _printf(const char *format, ...);```. The format string is composed of zero or more directives. See ```man 3 printf``` for more detail. **_printf** will return the number of characters printed (excluding the null byte used to end output to strings) and will write output to **stdout**, the standard output stream.
+* **_putchar.c:** - contains the function ```_putchar```, which writes a character to stdout.
+* **holberton.h:** - contains all function prototypes used for ```_printf```.
+* **man_3_printf:** - manual page for the custom ```_printf``` function.
+* **print_chars.c:** - contains the functions ```print_c```, ```print_s```, ```print_S```, and ```print_r``` which handle the conversion specifiers ```c```, ```s```, ```S```, and ```r```, respectively, as well as ```hex_print```, which prints a char's ascii value in uppercase hex
+* **print_numbers.c:** - contains the functions ```print_i``` and ```print_d```, which handle the conversion specifiers ```i``` and ```d```, respectively
+* **print_hex.c:** - contains the functions ```print_hex```, which prints an unsigned int in hexidecimal form, ```print_x```, ```print_X```, and ```print_p```, which handle the conversion specifiers ```x```, ```X```, and ```p```, respectively
+* **print_unsigned_int.c:** - contains the functions ```print_u```, ```print_o```, and ```print_b```, which handle the conversion specifiers ```u```, ```o```, and ```b```, respectively
+* **print_rot13.c** - contains the function ```print_R```, which handles the conversion specifier ```R`
