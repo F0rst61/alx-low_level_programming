@@ -58,8 +58,9 @@
 
 ### Authors
 
-- Rohisha
-- Huckiel
+- iAmG-r00t 👾
+- Michael Ndula [@Michaelndula](https://github.com/Michaelndula) 👨‍💻
+
 
 ## Tasks
 
