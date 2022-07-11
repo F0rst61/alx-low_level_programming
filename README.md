@@ -1,129 +1,63 @@
-# 0x11. C - printf Group Project
----
-Group Project done during **full stack Software Engineering studies** at **ALX SE programme** with the sole objective of learning about **printf function** in C language.
+# printf
+```printf``` is a custom implementation of the C programming function ```printf```. This project is an application of the C programming knowledge.
 
----
-Workshop Development
----
-Tasks
----
-_0. I'm not going anywhere. You can print that wherever you want to. I'm here and I'm a Spur for life_
+**Prototype:** ```int _printf(const char *, ...);```
 
-Write a function that produces output according to a format.
-* Prototype: int _printf(const char *format, ...);
-* Returns: the number of characters printed (excluding the null byte used to end output to strings)
-* write output to stdout, the standard output stream
-* format is a character string. The format string is composed of zero or more directives. See man 3 printf for more detail. You need to handle the following conversion specifiers:
-* You don’t have to reproduce the buffer handling of the C library printf function
-* You don’t have to handle the flag characters
-* You don’t have to handle field width
-* You don’t have to handle precision
-* You don’t have to handle the length modifiers
-   * s
-   * c
-   * %
+## Examples
+**String**
+* Input: ```_printf("%s\n", 'This is a string.');```
+* Output: ```This is a string.```
 
-### Repo:
-    GitHub repository: printf
----
-_1. Education is when you read the fine print. Experience is what you get if you don't_
-Write a function that prints numbers, followed by a new line.
-* You don’t have to handle the flag characters
-* You don’t have to handle field width
-* You don’t have to handle precision
-* You don’t have to handle the length modifiers
-      * d
-      * i
-### Repo: 
-    GitHub repository: printf
----
-_2. With a face like mine, I do better in print_
-Handle the following custom conversion specifiers:
-* b: the unsigned int argument is converted to binary
-### Repo: 
-    GitHub repository: printf
----
-_3. What one has not experienced, one will never understand in print_
-Handle the following conversion specifiers:
- * You don’t have to handle the flag characters
- * You don’t have to handle field width
- * You don’t have to handle precision
- * You don’t have to handle the length modifiers
-   * u
-   * o
-   * x
-   * X
-### Repo: 
-    GitHub repository: printf
----
-_4. Nothing in fine print is ever good news_
-Use a local buffer of 1024 chars in order to call write as little as possible.
-### Repo: 
-    GitHub repository: printf
----
-_5. My weakness is wearing too much leopard print_
-Handle the following custom conversion specifier:
-* S : prints the string.
-* Non printable characters (0 < ASCII value < 32 or >= 127) are printed this way: \x, followed by the ASCII code value in hexadecimal (upper case - always 2 characters)
-### Repo: 
-    GitHub repository: printf
----
-_6. How is the world ruled and led to war? Diplomats lie to journalists and believe these lies when they see them in print_
-Handle the following conversion specifier: p.
-* You don’t have to handle the flag characters
-* You don’t have to handle field width
-* You don’t have to handle precision
-* You don’t have to handle the length modifiers
-### Repo: 
-    GitHub repository: printf
----
-_7. The big print gives and the small print takes away_
-Handle the following flag characters for non-custom conversion specifiers:
-      * +
-      * space
-      * #
-### Repo: 
-    GitHub repository: printf
----
-_8. Sarcasm is lost in print_
-Handle the following length modifiers for non-custom conversion specifiers:
-      * l
-      * h
-### Repo: 
-    GitHub repository: printf
----
-_9. Print some money and give it to us for the rain forests_
-Handle the field width for non-custom conversion specifiers.
-### Repo: 
-    GitHub repository: printf
----
-_10. The negative is the equivalent of the composer's score, and the print the performance_
-Handle the precision for non-custom conversion specifiers.
-### Repo: 
-    GitHub repository: printf
----
-_11. It's depressing when you're still around and your albums are out of print_
-Handle the 0 flag character for non-custom conversion specifiers.
-### Repo: 
-    GitHub repository: printf
----
-_12. Every time that I wanted to give up, if I saw an interesting textile, print what ever, suddenly I would see a collection_
-Handle the - flag character for non-custom conversion specifiers.
-### Repo: 
-    GitHub repository: printf
----
-_13. Print is the sharpest and the strongest weapon of our party_
-Handle the following custom conversion specifier:
-* r : prints the reversed string
-### Repo: 
-    GitHub repository: printf
----
-_14. The flood of print has turned reading into a process of gulping rather than savoring_
-Handle the following custom conversion specifier:
-* R: prints the rot13'ed string
-### Repo: 
-    GitHub repository: printf
----
-      
-## Contributors.
-*  Rohisha Ramauthar, Huckiel Sukai
+**Character**
+* Input: ```_printf("The first letter in the alphabet is %c\n", 'A');```
+* Output: ```The first letter in the alphabet is A```
+
+**Integer**
+* Input: ```_printf("There are %i dozens in a gross\n", 12);```
+* Output: ```There are 12 dozens in a gross```
+
+**Decimal:**
+* Input: ```_printf("%d\n", 1000);```
+* Output:  ```1000```
+## Project Requirements
+* All files will be compiled on Ubuntu 14.04 LTS
+* Programs and functions will be compiled with gcc 4.8.4 using flags -Wall -Werror -Wextra and -pedantic compiler
+* Code must follow the [Betty](https://github.com/holbertonschool/Betty/wiki) style
+* Global variables are not allowed
+* Authorized functions and macros:
+  * ```write``` (man 2 write)
+  * ```malloc``` (man 3 malloc)
+  * ```free``` (man 3 free)
+  * ```va_start``` (man 3 va_start)
+  * ```va_end``` (man 3 va_end)
+  * ```va_copy``` (man 3 va_copy)
+  * ```va_arg``` (man 3 va_arg)
+## Mandatory Tasks
+- [x] Write function that produces output with conversion specifiers ```c```, ```s```, and ```%```.
+- [x] Handle conversion specifiers. ```d```, ```i```.
+- [x] Create a man page for your function.
+## Advanced Tasks
+- [x] Handle conversion specifier ```b```.
+- [x] Handle conversion specifiers ```u```, ```o```, ```x```, ```X```.
+[x] Use a local buffer of 1024 chars in order to call write as little as possible.
+- [x] Handle conversion specifier ```S```.
+- [x] Handle conversion specifier ```p```.
+- [ ] Handle flag characters ```+```, space, and ```#``` for non-custom conversion specifiers.
+- [ ] Handle length modifiers ```l``` and ```h``` for non-custom conversion specifiers.
+- [ ] Handle the field width for non-custom conversion specifiers.
+- [ ] Handle the precision for non-custom conversion specifiers.
+- [ ] Handle the ```0``` flag character for non-custom conversion specifiers.![163788643-5275226b-c1e7-4326-b96e-12092bb09f54](https://user-images.githubusercontent.com/94393557/164071978-cb18dbd8-cd6b-41a1-9a28-0494fa3cd199.png)
+
+- [x] Handle the custom conversion specifier ```r``` that prints the reversed string.
+- [x] Handle the custom conversion specifier ```R``` that prints the rot13'ed string.
+- [ ] All above options should work well together.
+## File Descriptions
+* **_printf.c:** - contains the  fucntion ```_printf```, which uses the prototype ```int _printf(const char *format, ...);```. The format string is composed of zero or more directives. See ```man 3 printf``` for more detail. **_printf** will return the number of characters printed (excluding the null byte used to end output to strings) and will write output to **stdout**, the standard output stream.
+* **_putchar.c:** - contains the function ```_putchar```, which writes a character to stdout.
+* **holberton.h:** - contains all function prototypes used for ```_printf```.
+* **man_3_printf:** - manual page for the custom ```_printf``` function.
+* **print_chars.c:** - contains the functions ```print_c```, ```print_s```, ```print_S```, and ```print_r``` which handle the conversion specifiers ```c```, ```s```, ```S```, and ```r```, respectively, as well as ```hex_print```, which prints a char's ascii value in uppercase hex
+* **print_numbers.c:** - contains the functions ```print_i``` and ```print_d```, which handle the conversion specifiers ```i``` and ```d```, respectively
+* **print_hex.c:** - contains the functions ```print_hex```, which prints an unsigned int in hexidecimal form, ```print_x```, ```print_X```, and ```print_p```, which handle the conversion specifiers ```x```, ```X```, and ```p```, respectively
+* **print_unsigned_int.c:** - contains the functions ```print_u```, ```print_o```, and ```print_b```, which handle the conversion specifiers ```u```, ```o```, and ```b```, respectively
+* **print_rot13.c** - contains the function ```print_R```, which handles the conversion specifier ```R`
