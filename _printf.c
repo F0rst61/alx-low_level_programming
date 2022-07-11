@@ -4,6 +4,7 @@
 #include <string.h>
 #include <unistd.h>
 #include "main.h"
+
 /**
  * _printf - produces output according to a format
  * @format: The specified format
@@ -15,6 +16,7 @@ int _printf(const char *format, ...)
 	int i = 0, tmp, processing_escape = FALSE, error = 1, last_token;
 	fmt_info_t fmt_info;
 	va_list args;
+
 	if (!format || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 	va_start(args, format);
@@ -42,6 +44,7 @@ int _printf(const char *format, ...)
 	va_end(args);
 	return (error <= 0 ? error : write_to_buffer('\0', -2));
 }
+
 /**
  * write_format - Writes data formatted against some parameters
  * @args_list: The arguments list
@@ -70,6 +73,7 @@ void write_format(va_list *args_list, fmt_info_t *fmt_info)
 		{'F', convert_fmt_fF},
 		{'f', convert_fmt_fF},
 	};
+
 	for (i = 0; i < 23 && spec_printers[i].spec != '\0'; i++)
 	{
 		if (fmt_info->spec == spec_printers[i].spec)
@@ -79,6 +83,7 @@ void write_format(va_list *args_list, fmt_info_t *fmt_info)
 		}
 	}
 }
+
 /**
  * _putstr - writes the given string to the buffer
  * @str: The string to write
@@ -89,10 +94,12 @@ void write_format(va_list *args_list, fmt_info_t *fmt_info)
 int _putstr(char *str)
 {
 	int i, out;
+
 	for (i = 0; str && *(str + i) != 0; i++)
 		out = _putchar(*(str + i));
 	return (out);
 }
+
 /**
  * _putchar - writes the character c to the buffer
  * @c: The character to print
@@ -104,6 +111,7 @@ int _putchar(char c)
 {
 	return (write_to_buffer(c, 0));
 }
+
 /**
  * write_to_buffer - Writes a char to the buffer based on an action code
  * @c: The character to write
@@ -122,6 +130,7 @@ int write_to_buffer(char c, char action)
 	static int chars_count;
 	static char buffer[1024];
 	static char out;
+
 	if (i < 1024 && action == 0)
 	{
 		out = chars_count < 1 ? 1 : out;
