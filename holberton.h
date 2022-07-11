@@ -1,52 +1,87 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef PRINTF
+#define PRINTF
 
-#include <stdlib.h>
+#define BIT_SIZE 8
+#define true 1
+#define false 0
+typedef unsigned int bool;
+/*
+ *   a local buffer which will be used
+ *   to store data until a syscall is made to write it
+ *   in the std out
+ */
+#define BUFFER_SIZE 1024
+
 #include <stdarg.h>
-/**
- * struct flags - struct containing flags to "turn on"
- * when a flag specifier is passed to _printf()
- * @plus: flag for the '+' character
- * @space: flag for the ' ' character
- * @hash: flag for the '#' character
- */
-typedef struct flags
-{
-	int plus;
-	int space;
-	int hash;
-} flags_t;
+#include <stdlib.h>
+#include <unistd.h>
 
 /**
- * struct printHandler - struct to choose the right function depending
- * on the format specifier passed to _printf()
- * @c: format specifier
- * @f: pointer to the correct printing function
- */
-typedef struct printHandler
+*struct printing_format - a struct for formating info
+*@flag: the flag used (+, -, '\0')
+*@width: the space taken during printing
+*@mod: modifier (l, h)
+*@precision: how manyt points after . in case of f
+*@zero_fill: --
+*@replaced: the total amount the format is holding
+*@validity: is this format a complete format
+*@printer: a function to handle the printing
+*/
+typedef struct printing_format
 {
-	char c;
-	int (*f)(va_list ap, flags_t *f);
-} ph;
-int print_int(va_list l, flags_t *f);
-void print_number(int n);
-int print_unsigned(va_list l, flags_t *f);
-int count_digit(int i);
-int print_hex(va_list l, flags_t *f);
-int print_hex_big(va_list l, flags_t *f);
-int print_binary(va_list l, flags_t *f);
-int print_octal(va_list l, flags_t *f);
-char *convert(unsigned long int num, int base, int lowercase);
+	char flag;
+	int width;
+	char mod;
+	int precision;
+	bool zero_fill;
+	int replaced;
+	bool validity;
+	char *(*printer)(va_list, struct printing_format *);
+} printing_format;
+/*printer functions*/
+char *_putchar(va_list, printing_format *);
+char *_putstr(va_list, printing_format *);
+char *_putint(va_list, printing_format *);
+char *_putuint(va_list, printing_format *);
+char *_putbin(va_list, printing_format *);
+char *_puthex(va_list, printing_format *);
+char *_putoct(va_list, printing_format *);
+char *_putHex(va_list, printing_format *);
+char *_putadress(va_list, printing_format *);
+char *_putrts(va_list, printing_format *);
+char *_putrot13(va_list, printing_format *);
+char *_putS(va_list, printing_format *);
+
+/*printf and its helpers*/
 int _printf(const char *format, ...);
-int (*get_print(char s))(va_list, flags_t *);
-int get_flag(char s, flags_t *f);
-int print_string(va_list l, flags_t *f);
-int print_char(va_list l, flags_t *f);
-int _putchar(char c);
-int _puts(char *str);
-int print_rot13(va_list l, flags_t *f);
-int print_rev(va_list l, flags_t *f);
-int print_bigS(va_list l, flags_t *f);
-int print_address(va_list l, flags_t *f);
-int print_percent(va_list l, flags_t *f);
-#endif
+printing_format *parse_format(const char *);
+int buf_push(char *, int *, char *);
+int *print(const char *, va_list, int *, char *);
+
+/*validity checker*/
+bool is_valid_id(char);
+int checkflag(printing_format *, char);
+int checkwidth(printing_format *, const char *);
+int checkprecision(printing_format *, const char *);
+int checkmod(printing_format *, const char *);
+
+/*parser to identify printing format*/
+printing_format *parse_format(const char *);
+
+/*printer identifier*/
+char *(*get_printer(char id))(va_list, printing_format *);
+
+/*num_utils*/
+int _pow(unsigned int, int);
+int _numLen(unsigned int);
+int max(int, int);
+char *to_hex(int);
+
+/*string utils*/
+int _strlen(char *);
+void rev_string(char *);
+void _toStr(unsigned long int, char *);
+char *_strcpy(char *, char *);
+char *rot13(char *);
+
+#endif /*PINTF*/
