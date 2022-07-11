@@ -62,4 +62,5 @@
 * **print_unsigned_int.c:** - contains the functions ```print_u```, ```print_o```, and ```print_b```, which handle the conversion specifiers ```u```, ```o```, and ```b```, respectively
 * **print_rot13.c** - contains the function ```print_R```, which handles the conversion specifier ```R`
 
-Authors : Rohisha Ramauthar || Huckiel Sukai
+#Authors
+[Rohisha](www.github.com!/Kai-deux) || [Huckiel](www.github.com!/Huckiel_7)
