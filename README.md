@@ -18,4 +18,4 @@ Project 0X011.c Prinf
 15. The flood of print has turned reading into a process of gulping rather than savoring
 16. *
 
-Authors Roshisha Ramathuar || Huckiel Sukai
+Authors Roshisha Ramauthar || Huckiel Sukai
