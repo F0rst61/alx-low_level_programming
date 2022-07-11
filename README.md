@@ -64,4 +64,4 @@
 
 ##Authors
 
-[Rohisha](www.github.com/Kai-Deux) || [Huckiel](www.github.com/Huckiel7)
+[Rohisha](https://github.com/Kai-Deux) || [Huckiel](https://github.com/Huckiel7)
