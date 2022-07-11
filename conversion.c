@@ -1,4 +1,8 @@
+#include <stdarg.h>
 #include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <unistd.h>
 #include "main.h"
 /**
  * convert_alpha_numeric - convert digits to char
