@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 /**
 *is_valid_id - checks if id is part of the allowed identifiers
 *@id: identifier

@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 /**
  *get_printer - returns the correct pointer
  *to function based on a specifier character

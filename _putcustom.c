@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 /**
  * _putrts - reverses string inside a va_list
  * @list: the variadic list to extract it from
