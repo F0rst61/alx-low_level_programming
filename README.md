@@ -31,4 +31,3 @@ These 3 functions are the bases for this project:
  1. Printf: Is the frontend of all the algorithm, so is the prototype, and just receive the variables
  2. Handler: Is the controller for the string and the formats, and also does the counter for the numbers of bytes that are printing
  3. Percent handler: Compare a list of possible specifiers with the current pattern, and return the corresponding function
-
