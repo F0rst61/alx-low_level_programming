@@ -1,60 +1,129 @@
-#_printf
+# 0x11. C - printf Group Project
+---
+Group Project done during **full stack Software Engineering studies** at **ALX SE programme** with the sole objective of learning about **printf function** in C language.
 
-Hello and welcome to our first group project, we're replicating the printf() function from the C Standard Library.
+---
+Workshop Development
+---
+Tasks
+---
+_0. I'm not going anywhere. You can print that wherever you want to. I'm here and I'm a Spur for life_
 
-##Functionality
+Write a function that produces output according to a format.
+* Prototype: int _printf(const char *format, ...);
+* Returns: the number of characters printed (excluding the null byte used to end output to strings)
+* write output to stdout, the standard output stream
+* format is a character string. The format string is composed of zero or more directives. See man 3 printf for more detail. You need to handle the following conversion specifiers:
+* You don’t have to reproduce the buffer handling of the C library printf function
+* You don’t have to handle the flag characters
+* You don’t have to handle field width
+* You don’t have to handle precision
+* You don’t have to handle the length modifiers
+   * s
+   * c
+   * %
 
-The printf() function takes input text and displays it on screen as stdout. It also uses format specifiers to display different variables previoulsy defined. For this we need format specifiers. To finish up, we have our text displayed on screen and a count of bytes printed.
-
-**The syntax is as follows:**
-
-    _printf(const char *format, ...);
-
-**Example:**
-
-    _printf("Hola %s\n", "Mundo");
-
-*Output:*
-
-    Hola Mundo
-
-In the above example, we use the format specifier *%s*, which is defined for strings. To make it work we need to detect the special character *'%'* and the following character, in this case the letter 's'.
-Then, we call our function to iterate a string, let's call it *print_string(char \*c);* 
-Then, we redirect the output of our *print_string()* function to our *_printf()* function, ending with the desired output.
-
-
-**Steps:**
-
-1. Pass in formatted text and variables for specifiers
-2. Define iterators, flags and list to retrieve and manipulate input.
-3. Verify that input exists, i.e something is passed into the function parameters.
-4. Iterate the text and print it character by character, count bytes.
-5. if there are any format specifiers, detect them and retrieve it's corresponding value from list.
-   
-**Library**
-
-For our format specifiers to work properly, we need functions that take input and process it to display our desired output. The way we have to relate our *_printf()* program to these other functions is through a static library. We have all our files within the same directory and a library file with format *.h* that contains our function prototypes. Then the compiler takes care of calling our functions by matching the prototypes to our actual files. 
-
-**Chart of specifiers and related functions:**
-
-| Specifier | Variable assigned | Function prototype | Description |
-| ----------- | ----------- | ----------- | ----------- |
-| %% | N/A | _putchar(char c); | Prints special character '%' |
-| %c | Char | _putchar(char c); | Prints one character |
-| %s | String | print_str(char *c); | Prints string | 
-| %d | Integer | print_int(long int num); | Prints integer |
-| %i | Integer | print_int(long int num); | Prints  integer |
-| %u | Integer | print_unt(long int num); | Prints integer without sign |
-| %b | Unsigned Integer | print_bin(unsigned long int num); | Prints integer in binary |
-| %o | Unsigned Integer | print_oct(unsigned long int num); | Prints integer in octal |
-| %x | Unsigned Integer | print_hexlow(unsigned long int num); | Prints integer in lowercase hexadecimal |
-| %X | Unsigned Integer | print_hex(unsigned long int num); | Prints integer in uppercase hexadecimal |
-| %S | String | print_Str(char *c); | Prints string, special characters printed with their ASCII code in binary |
-| %p | Void Pointer | print_ptr(void *ptr); | Prints address where pointer points to |
-| %R | String | print_rot13(char *c); | Prints string in rot13 format |
-| %r | String | print_rev(char *c); | Prints string reversed |
-
-##Flowchart
-![flowchart](https://lh3.googleusercontent.com/twgsuB2YsDhf61T-tuzcnyRfoMfsrjiyo7ouNOMq6UL_Ht4Py662oWv8aNkOrWbJyUWSPDLn0UDheqkvcNOMgr1FBwcbYe5cBNDODr6OeDltoj-JRm6D1iuh-bccIPLrZLmy5NrRzYELnvjCUjFyL8zU3XzJZRdfTvmrcE7CSUoE92KUx9qyq9JHHXIdaYvaSPCGxr8ofHM2Okgn81M8VMMqyNGMK0uEmv7DYTE-fBA2VitswSHTtHg0BJmeeXuwHDn53ViTJUztqSUjbiU9zhMU99AIw_Qa5urb_dzlyuhKgjSiXF1CGnz5J5zGb9A0NB1A-myWflgfVr57fFFBi_m0kQZxefCz26xMc7KVrLMvunSNuGHDcJdInc9SuT8LKIVPdifhYDq5-XAHiLZsHgM-pMHldXpY354HUTbSHXY_WQO37xZyLEAF3yUFAYvuNjGORjbp-XrOacmQUfUY5BLesKXRrsjVnrkooYXxRFb6iYvsnHzVCNP7_loldw4-tpnSCdKpEXT3Ia4AdCCy3IWi3-ms8i_1X8O3JTVABoVu0tQOW_BCixJp0zfH1QD6mDf5AgnUa13i-zaN1zyTbZ2hLdeNpHY8laE5Pt7fHXFdP6PYffQBvMCQC2F1Quuf7kE_pzIrh1r4_-FzhdoqRpBhvDPblM37jsly8vOX2IBaWRRn4iL5_uB-QOTDYjEoy9SGugf-KeUUrEbEofSQrA=w1236-h866-no?authuser=0)
-
-
+### Repo:
+    GitHub repository: printf
+---
+_1. Education is when you read the fine print. Experience is what you get if you don't_
+Write a function that prints numbers, followed by a new line.
+* You don’t have to handle the flag characters
+* You don’t have to handle field width
+* You don’t have to handle precision
+* You don’t have to handle the length modifiers
+      * d
+      * i
+### Repo: 
+    GitHub repository: printf
+---
+_2. With a face like mine, I do better in print_
+Handle the following custom conversion specifiers:
+* b: the unsigned int argument is converted to binary
+### Repo: 
+    GitHub repository: printf
+---
+_3. What one has not experienced, one will never understand in print_
+Handle the following conversion specifiers:
+ * You don’t have to handle the flag characters
+ * You don’t have to handle field width
+ * You don’t have to handle precision
+ * You don’t have to handle the length modifiers
+   * u
+   * o
+   * x
+   * X
+### Repo: 
+    GitHub repository: printf
+---
+_4. Nothing in fine print is ever good news_
+Use a local buffer of 1024 chars in order to call write as little as possible.
+### Repo: 
+    GitHub repository: printf
+---
+_5. My weakness is wearing too much leopard print_
+Handle the following custom conversion specifier:
+* S : prints the string.
+* Non printable characters (0 < ASCII value < 32 or >= 127) are printed this way: \x, followed by the ASCII code value in hexadecimal (upper case - always 2 characters)
+### Repo: 
+    GitHub repository: printf
+---
+_6. How is the world ruled and led to war? Diplomats lie to journalists and believe these lies when they see them in print_
+Handle the following conversion specifier: p.
+* You don’t have to handle the flag characters
+* You don’t have to handle field width
+* You don’t have to handle precision
+* You don’t have to handle the length modifiers
+### Repo: 
+    GitHub repository: printf
+---
+_7. The big print gives and the small print takes away_
+Handle the following flag characters for non-custom conversion specifiers:
+      * +
+      * space
+      * #
+### Repo: 
+    GitHub repository: printf
+---
+_8. Sarcasm is lost in print_
+Handle the following length modifiers for non-custom conversion specifiers:
+      * l
+      * h
+### Repo: 
+    GitHub repository: printf
+---
+_9. Print some money and give it to us for the rain forests_
+Handle the field width for non-custom conversion specifiers.
+### Repo: 
+    GitHub repository: printf
+---
+_10. The negative is the equivalent of the composer's score, and the print the performance_
+Handle the precision for non-custom conversion specifiers.
+### Repo: 
+    GitHub repository: printf
+---
+_11. It's depressing when you're still around and your albums are out of print_
+Handle the 0 flag character for non-custom conversion specifiers.
+### Repo: 
+    GitHub repository: printf
+---
+_12. Every time that I wanted to give up, if I saw an interesting textile, print what ever, suddenly I would see a collection_
+Handle the - flag character for non-custom conversion specifiers.
+### Repo: 
+    GitHub repository: printf
+---
+_13. Print is the sharpest and the strongest weapon of our party_
+Handle the following custom conversion specifier:
+* r : prints the reversed string
+### Repo: 
+    GitHub repository: printf
+---
+_14. The flood of print has turned reading into a process of gulping rather than savoring_
+Handle the following custom conversion specifier:
+* R: prints the rot13'ed string
+### Repo: 
+    GitHub repository: printf
+---
+      
+## Contributors.
+*  Rohisha Ramauthar, Huckiel Sukai
