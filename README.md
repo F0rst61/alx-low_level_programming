@@ -1,63 +1,56 @@
-# printf
-```printf``` is a custom implementation of the C programming function ```printf```. This project is an application of the C programming knowledge.
+# _printf 
+<br />
+This is a printf function with the functionalities of printing characters (c), strings (s), % (%), octals(o), hexidecimals (x and X). We also a custom formatter binary (b).
+<br />
+print3.c
+<br />
+This is our file that contains our printf function. Also included is an error function that can return an error when called upon.
+<br />
+Formatter files<br />
+<br />
+We created a file for each formatter. In each file, it should contain a make_formatter function that creates a string to fill in the buffer. Also included in each formatter file is a conversion check to see if we need to account for precision, width, or flag. If necessary, we also included a helper function to convert a number to a string. 
+<br />
+  Foramtter files:<br />
+    binary.c <br />
+    chars.c <br />
+    decimal.c <br />
+    hex.c <br />
+    heX.c <br />
+    octal.c <br />
+    strings.c <br />
+    unsigned.c <br />
+ <br /> 
+Helper files
+<br />
+We created helper files to put universal helper functions such at idigit, no_conversion, reverse_array. These functions are used multiple times throughout the files.
+<br />
+  Helper files:<br />
+    unihelper.c<br />
+      is_digit<br />
+      no_conversion<br />
+      strlen<br />
+      isdflag<br />
+    unihelper2.c<br />
+      give_precision.c<br />
+      give_width.c<br />
+      get_result.c<br />
+<br />
+Example:
+<br />
+int main(void)<br />
+{<br />
+  _printf("This is a char: [%c]\n", 'c')<br />
+  _printf("This is a %s\n", "string.");<br />
+  _printf("Unsigned octal:[%o]\n", ui);<br />
+  _printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);<br />
+  _printf("Unsigned:[%u]\n", ui);<br />
+  _printf("Binary is [%b]\n", 98);<br />
+  return (0)<br />
+}<br />
 
-**Prototype:** ```int _printf(const char *, ...);```
-
-## Examples
-**String**
-* Input: ```_printf("%s\n", 'This is a string.');```
-* Output: ```This is a string.```
-
-**Character**
-* Input: ```_printf("The first letter in the alphabet is %c\n", 'A');```
-* Output: ```The first letter in the alphabet is A```
-
-**Integer**
-* Input: ```_printf("There are %i dozens in a gross\n", 12);```
-* Output: ```There are 12 dozens in a gross```
-
-**Decimal:**
-* Input: ```_printf("%d\n", 1000);```
-* Output:  ```1000```
-## Project Requirements
-* All files will be compiled on Ubuntu 14.04 LTS
-* Programs and functions will be compiled with gcc 4.8.4 using flags -Wall -Werror -Wextra and -pedantic compiler
-* Code must follow the [Betty](https://github.com/holbertonschool/Betty/wiki) style
-* Global variables are not allowed
-* Authorized functions and macros:
-  * ```write``` (man 2 write)
-  * ```malloc``` (man 3 malloc)
-  * ```free``` (man 3 free)
-  * ```va_start``` (man 3 va_start)
-  * ```va_end``` (man 3 va_end)
-  * ```va_copy``` (man 3 va_copy)
-  * ```va_arg``` (man 3 va_arg)
-## Mandatory Tasks
-- [x] Write function that produces output with conversion specifiers ```c```, ```s```, and ```%```.
-- [x] Handle conversion specifiers. ```d```, ```i```.
-- [x] Create a man page for your function.
-## Advanced Tasks
-- [x] Handle conversion specifier ```b```.
-- [x] Handle conversion specifiers ```u```, ```o```, ```x```, ```X```.
-[x] Use a local buffer of 1024 chars in order to call write as little as possible.
-- [x] Handle conversion specifier ```S```.
-- [x] Handle conversion specifier ```p```.
-- [ ] Handle flag characters ```+```, space, and ```#``` for non-custom conversion specifiers.
-- [ ] Handle length modifiers ```l``` and ```h``` for non-custom conversion specifiers.
-- [ ] Handle the field width for non-custom conversion specifiers.
-- [ ] Handle the precision for non-custom conversion specifiers.
-- [ ] Handle the ```0``` flag character for non-custom conversion specifiers.![163788643-5275226b-c1e7-4326-b96e-12092bb09f54](https://user-images.githubusercontent.com/94393557/164071978-cb18dbd8-cd6b-41a1-9a28-0494fa3cd199.png)
-
-- [x] Handle the custom conversion specifier ```r``` that prints the reversed string.
-- [x] Handle the custom conversion specifier ```R``` that prints the rot13'ed string.
-- [ ] All above options should work well together.
-## File Descriptions
-* **_printf.c:** - contains the  fucntion ```_printf```, which uses the prototype ```int _printf(const char *format, ...);```. The format string is composed of zero or more directives. See ```man 3 printf``` for more detail. **_printf** will return the number of characters printed (excluding the null byte used to end output to strings) and will write output to **stdout**, the standard output stream.
-* **_putchar.c:** - contains the function ```_putchar```, which writes a character to stdout.
-* **holberton.h:** - contains all function prototypes used for ```_printf```.
-* **man_3_printf:** - manual page for the custom ```_printf``` function.
-* **print_chars.c:** - contains the functions ```print_c```, ```print_s```, ```print_S```, and ```print_r``` which handle the conversion specifiers ```c```, ```s```, ```S```, and ```r```, respectively, as well as ```hex_print```, which prints a char's ascii value in uppercase hex
-* **print_numbers.c:** - contains the functions ```print_i``` and ```print_d```, which handle the conversion specifiers ```i``` and ```d```, respectively
-* **print_hex.c:** - contains the functions ```print_hex```, which prints an unsigned int in hexidecimal form, ```print_x```, ```print_X```, and ```print_p```, which handle the conversion specifiers ```x```, ```X```, and ```p```, respectively
-* **print_unsigned_int.c:** - contains the functions ```print_u```, ```print_o```, and ```print_b```, which handle the conversion specifiers ```u```, ```o```, and ```b```, respectively
-* **print_rot13.c** - contains the function ```print_R```, which handles the conversion specifier ```R`
+This is a char: [c]<br />
+This is a string.<br />
+Unsigned octal:[20000001777]<br />
+Unsigned hexadecimal:[800003ff, 800003FF]<br />
+Unsigned:[2147484671]<br />
+Binary is [1100010]<br />
