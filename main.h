@@ -99,11 +99,4 @@ typedef struct m_string
 	char *(*make_s)(char *, va_list);
 } m_string;
 
-
-
-
-
-
-
-
 #endif
