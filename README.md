@@ -1,67 +1,180 @@
 # printf
-```printf``` is a custom implementation of the C programming function ```printf```. This project is an application of the C programming knowledge.
 
-**Prototype:** ```int _printf(const char *, ...);```
+A simple printf function built by Ojonuba Jeremiah and Lucky Abiom for Alx software Engineering School.
+# Welcome
 
-## Examples
-**String**
-* Input: ```_printf("%s\n", 'This is a string.');```
-* Output: ```This is a string.```
+Rebuild of the standard printf function in C. Our project required a function capable of printing with the %d, %c, %s, and %% specifiers to standard output. printf returns the number of characters printed (excluding the null byte at the end of strings). We were not asked to handle flag characters, field width, precision, or length.
+# Format 
 
-**Character**
-* Input: ```_printf("The first letter in the alphabet is %c\n", 'A');```
-* Output: ```The first letter in the alphabet is A```
+Our team chose to add %x ,%X, %b, %o, %u, %r, %R, and %p formatting. We relied on the library we have been building at Alx as well as new concepts gathered during this project.
+# Supported Format Types
+TYPE - OUTPUT
 
-**Integer**
-* Input: ```_printf("There are %i dozens in a gross\n", 12);```
-* Output: ```There are 12 dozens in a gross```
+c - Single character
 
-**Decimal:**
-* Input: ```_printf("%d\n", 1000);```
-* Output:  ```1000```
-## Project Requirements
-* All files will be compiled on Ubuntu 14.04 LTS
-* Programs and functions will be compiled with gcc 4.8.4 using flags -Wall -Werror -Wextra and -pedantic compiler
-* Code must follow the [Betty](https://github.com/holbertonschool/Betty/wiki) style
-* Global variables are not allowed
-* Authorized functions and macros:
-  * ```write``` (man 2 write)
-  * ```malloc``` (man 3 malloc)
-  * ```free``` (man 3 free)
-  * ```va_start``` (man 3 va_start)
-  * ```va_end``` (man 3 va_end)
-  * ```va_copy``` (man 3 va_copy)
-  * ```va_arg``` (man 3 va_arg)
-## Mandatory Tasks
-- [x] Write function that produces output with conversion specifiers ```c```, ```s```, and ```%```.
-- [x] Handle conversion specifiers. ```d```, ```i```.
-- [x] Create a man page for your function.
-## Advanced Tasks
-- [x] Handle conversion specifier ```b```.
-- [x] Handle conversion specifiers ```u```, ```o```, ```x```, ```X```.
-[x] Use a local buffer of 1024 chars in order to call write as little as possible.
-- [x] Handle conversion specifier ```S```.
-- [x] Handle conversion specifier ```p```.
-- [ ] Handle flag characters ```+```, space, and ```#``` for non-custom conversion specifiers.
-- [ ] Handle length modifiers ```l``` and ```h``` for non-custom conversion specifiers.
-- [ ] Handle the field width for non-custom conversion specifiers.
-- [ ] Handle the precision for non-custom conversion specifiers.
-- [ ] Handle the ```0``` flag character for non-custom conversion specifiers.![163788643-5275226b-c1e7-4326-b96e-12092bb09f54](https://user-images.githubusercontent.com/94393557/164071978-cb18dbd8-cd6b-41a1-9a28-0494fa3cd199.png)
+s - String of character
 
-- [x] Handle the custom conversion specifier ```r``` that prints the reversed string.
-- [x] Handle the custom conversion specifier ```R``` that prints the rot13'ed string.
-- [ ] All above options should work well together.
-## File Descriptions
-* **_printf.c:** - contains the  fucntion ```_printf```, which uses the prototype ```int _printf(const char *format, ...);```. The format string is composed of zero or more directives. See ```man 3 printf``` for more detail. **_printf** will return the number of characters printed (excluding the null byte used to end output to strings) and will write output to **stdout**, the standard output stream.
-* **_putchar.c:** - contains the function ```_putchar```, which writes a character to stdout.
-* **holberton.h:** - contains all function prototypes used for ```_printf```.
-* **man_3_printf:** - manual page for the custom ```_printf``` function.
-* **print_chars.c:** - contains the functions ```print_c```, ```print_s```, ```print_S```, and ```print_r``` which handle the conversion specifiers ```c```, ```s```, ```S```, and ```r```, respectively, as well as ```hex_print```, which prints a char's ascii value in uppercase hex
-* **print_numbers.c:** - contains the functions ```print_i``` and ```print_d```, which handle the conversion specifiers ```i``` and ```d```, respectively
-* **print_hex.c:** - contains the functions ```print_hex```, which prints an unsigned int in hexidecimal form, ```print_x```, ```print_X```, and ```print_p```, which handle the conversion specifiers ```x```, ```X```, and ```p```, respectively
-* **print_unsigned_int.c:** - contains the functions ```print_u```, ```print_o```, and ```print_b```, which handle the conversion specifiers ```u```, ```o```, and ```b```, respectively
-* **print_rot13.c** - contains the function ```print_R```, which handles the conversion specifier ```R`
+r - String in reverse
 
-##Authors
+R - String in rot13
 
-[Rohisha](https://github.com/Kai-Deux) || [Huckiel](https://github.com/Huckiel7)
+d - Integer in decimal
+
+i - integer
+
+% - Percent sign
+
+x - Lowercase hex(loervase)
+
+X - Uppercase hex (unsigned)
+
+b -  signed binary
+
+o -  signed octal
+
+u - unsigned integer
+
+p - pointer address
+
+# Examples
+
+Character: printf("%c", A); Output:: A
+
+String: printf("%s", This is a string.); Output: This is a string.
+
+Integer: printf("%i", 5); Output: 5
+
+# File Functions
+
+_printf.c
+Own Printf Function Tha Performs Formatted Output Conversion And Print Data.
+
+ # main.h
+Header File Were All Prototypes Are Saved.
+
+# get_print_func.c
+Pointer To A Function That Selects The Correct Function To Perform The Operation.
+
+# print_buf.c
+Function That Prints The Buffer.
+
+# handl_buf.c
+Function That Concatenates The Buffer Characters.
+
+# print_chr.c
+Function That Writes The Character C To Stdout.
+
+/* Identifier : %c */
+# print_str.c
+Function That Writes The String To Stdout.
+
+/* Identifier : %s */
+# print_int.c
+Function That Prints An Integer.
+
+/* Identifier : %i or %d */
+# print_bnr.c
+Function That Prints Decimal In Binary.
+
+/* Identifier : %b */
+# print_oct.c
+Function That Prints Decimal In Octal.
+
+/* Identifier : %o */
+# print_hex.c
+Function That Prints Decimal In Hexadecimal.
+
+/* Identifier : %x */
+# print_upx.c
+Function That Prints Decimal In Uppercase Hexadecimal.
+
+/* Identifier : %X */
+# print_usr.c
+Function That Prints A String And Values Of Non-Printed Chars.
+
+/* Identifier : %S */
+# print_unt.c
+Function That Prints An Unsigned Integer.
+
+/* Identifier : %u */
+# print_rev.c
+Function That Writes The String To Stdout In Reverse.
+
+/* Identifier : %r */
+# print_rot.c
+Function That Writes The String To Stdout In Rot13.
+
+/* Identifier : %R */
+# print_add.c
+Function That Prints The Address Of An Input Variable.
+
+/* Identifier : %p */
+# print_long_oct.c
+Function That Prints Long Decimal Number In Octal.
+
+/* Identifier : %lo */
+# print_long_hex.c
+Function That Prints Long Decimal Number In Hexadecimal.
+
+/* Identifier : %lx */
+# print_long_int.c
+Function That Prints A Long Integer.
+
+/* Identifier : %li */
+# print_long_upx.c
+Function That Prints A Long Decimal In Uppercase Hexadecimal.
+
+/* Identifier : %lX */
+# print_long_unt.c
+Function That Prints A Long Unsigned Integer.
+
+/* Identifier : %lu */
+# print_short_oct.c
+Function That Prints Short Decimal Number In Octal.
+
+/* Identifier : %ho */
+# print_short_hex.c
+Function That Prints Short Decimal Number In Hexadecimal.
+
+/* Identifier : %hx */
+# print_short_int.c
+Function That Prints A Short Integer.
+
+# print_short_upx.c
+Function That Prints A Short Decimal In Uppercase Hexadecimal.
+
+/* Identifier : %hX */
+# print_short_unt.c
+Function That Prints A Short Unsigned Integer.
+
+/* Identifier : %hu */
+# print_num_hex.c
+Function That Print A Number In Hexadecimal Begining With 0 And x.
+
+/* Identifier : %#x */
+# print_num_oct.c
+Function That Prints A Number In Octal Begining With 0 And o.
+
+/* Identifier : %#o */
+# print_num_upx.c
+Function That Prints A Number In Uppercase Hexadecimal.
+
+/* Identifier : %#X */
+# print_plus_int.c
+Function That Prints An Integer With Plus Symbol.
+
+/* Identifier : %+i */
+# print_space_int.c
+Function That Prints An Integer Begining With 0 And u.
+
+/* Identifier : % i */
+# ev_print_func.c
+Function That Returns The Amount Of Indetifiers.
+
+
+# Authors
+
+Rohisha Ramauthar - github.com/Kai-Deux
+Huckiel Sukai -github.com/Huckiel7
+ 
+ # End
