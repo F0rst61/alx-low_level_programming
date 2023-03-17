@@ -1,16 +1,19 @@
 #include <stdio.h>
 
+/**
+ * main - Entrry point
+ *
+ * Return: 0
+ */
 int main(void)
 {
-  char c;
+	char a = 'z';
 
-  for (c = 'z'; c >= 'a'; c--)
-  {
-    putchar(c);
-  }
-
-  putchar('\n');
-
-  return 0;
+	while (a >= 'a')
+	{
+		putchar(a);
+		a--;
+	}
+	putchar('\n');
+	return (0);
 }
-
